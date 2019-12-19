@@ -1,0 +1,36 @@
+{
+    "id": "481a38600c51e0e2e63425e4e4320543",
+    "name": "AppVeyor",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "c7e85b5772d3d3983febcc54cb183114",
+            "name": "Encrypt a value for use in StoredValue.",
+            "url": "http:\/\/ci.appveyor.com\/api\/account\/encrypt",
+            "description": "",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "481a38600c51e0e2e63425e4e4320543",
+            "rawModeData": ""
+        }
+    ]
+}
