@@ -1,0 +1,133 @@
+{
+    "name": "AppVeyor",
+    "description": "We provide continuous integration tools for Windows developers. The service is offered for free to open-source projects, we offer subscriptions for private projects and AppVeyor Enterprise installations on customer premises.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/28368-app-veyor.jpg",
+    "tags": [
+        "api service provider",
+        "have api",
+        "have swagger",
+        "json",
+        "orchestration",
+        "profile",
+        "python",
+        "relative data",
+        "service api"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/appveyor\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "App Veyor",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/28368-app-veyor.jpg",
+            "humanURL": "http:\/\/appveyor.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/app-veyor-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/app-veyor.json"
+                }
+            ]
+        },
+        {
+            "name": "AppVeyor",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/28368-app-veyor.jpg",
+            "humanURL": "http:\/\/appveyor.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/appveyor-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/appveyor.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "About",
+            "url": "https:\/\/www.appveyor.com\/about\/"
+        },
+        {
+            "type": "Blog",
+            "url": "https:\/\/www.appveyor.com\/blog\/"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/appveyor-systems-inc"
+        },
+        {
+            "type": "Documentation",
+            "url": "https:\/\/www.appveyor.com\/docs\/"
+        },
+        {
+            "type": "Email",
+            "url": "jobs@appveyor.com"
+        },
+        {
+            "type": "Email",
+            "url": "team@appveyor.com"
+        },
+        {
+            "type": "Email",
+            "url": "privacy@appveyor.com"
+        },
+        {
+            "type": "Getting Started",
+            "url": "https:\/\/www.appveyor.com\/docs\/server\/"
+        },
+        {
+            "type": "GitHub",
+            "url": "https:\/\/github.com\/AppVeyor"
+        },
+        {
+            "type": "LinkedIn",
+            "url": "https:\/\/www.linkedin.com\/company\/appveyor-systems-inc-"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/28368-2019-09-03-20-54-02.json"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/www.appveyor.com\/pricing\/"
+        },
+        {
+            "type": "Privacy",
+            "url": "https:\/\/www.appveyor.com\/privacy-policy\/"
+        },
+        {
+            "type": "Support",
+            "url": "https:\/\/www.appveyor.com\/support\/"
+        },
+        {
+            "type": "Terms of service",
+            "url": "https:\/\/www.appveyor.com\/terms-of-service\/"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/appveyor"
+        },
+        {
+            "type": "Webhooks",
+            "url": "https:\/\/www.appveyor.com\/docs\/deployment\/webhook\/"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/appveyor.com"
+        }
+    ]
+}
