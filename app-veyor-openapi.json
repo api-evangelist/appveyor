@@ -1,0 +1,1727 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "0.20170106",
+        "title": "App Veyor",
+        "description": "AppVeyor is a hosted continuous integration service which runs on Microsoft\nWindows.  The AppVeyor REST API provides a RESTful way to interact with the\nAppVeyor service.  This includes managing projects, builds, deployments,\nand the teams that build them.\n\nAdditional help and discussion of the AppVeyor REST API is available at\nhttp:\/\/help.appveyor.com\/discussions\n\nThis Swagger definition is an **unofficial** description of the AppVeyor\nREST API maintained at https:\/\/github.com\/kevinoid\/appveyor-swagger\nPlease report any issues or suggestions for this Swagger definition at\nhttps:\/\/github.com\/kevinoid\/appveyor-swagger\/issues\/new\n\n#### API Conventions\n\nFields which are missing from update operations (`PUT` requests) are\ntypically reset to their default values.  So although most fields are not\ntechnically required, they should usually be specified in practice.\n",
+        "termsOfService": "https:\/\/www.appveyor.com\/terms-of-service\/"
+    },
+    "servers": [
+        "httpsci.appveyor.com\/api"
+    ],
+    "paths": {
+        "\/account\/encrypt": {
+            "post": {
+                "summary": "Post Account Encrypt",
+                "description": "Post account encrypt.",
+                "operationId": "PostAccountEncrypt",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/buildjobs\/{jobId}\/artifacts": {
+            "get": {
+                "summary": "Get Buildjobs Jobid Artifacts",
+                "description": "Get buildjobs jobid artifacts.",
+                "operationId": "GetBuildjobsJobArtifacts",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Buildjobs Jobid Artifacts",
+                "description": "Parameters buildjobs jobid artifacts.",
+                "operationId": "ParametersBuildjobsJobArtifacts",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/buildjobs\/{jobId}\/artifacts\/{artifactFileName}": {
+            "get": {
+                "summary": "Get Buildjobs Jobid Artifacts Artifactfilename",
+                "description": "Get buildjobs jobid artifacts artifactfilename.",
+                "operationId": "GetBuildjobsJobArtifactsArtifactfilename",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Buildjobs Jobid Artifacts Artifactfilename",
+                "description": "Parameters buildjobs jobid artifacts artifactfilename.",
+                "operationId": "ParametersBuildjobsJobArtifactsArtifactfilename",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/buildjobs\/{jobId}\/log": {
+            "get": {
+                "summary": "Get Buildjobs Jobid Log",
+                "description": "Get buildjobs jobid log.",
+                "operationId": "GetBuildjobsJobLog",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Buildjobs Jobid Log",
+                "description": "Parameters buildjobs jobid log.",
+                "operationId": "ParametersBuildjobsJobLog",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/builds": {
+            "post": {
+                "summary": "Post Builds",
+                "description": "Post builds.",
+                "operationId": "PostBuilds",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/builds\/{accountName}\/{projectSlug}\/{buildVersion}": {
+            "delete": {
+                "summary": "Delete Builds Accountname Projectslug Buildversion",
+                "description": "Delete builds accountname projectslug buildversion.",
+                "operationId": "DeleteBuildsAccountnameProjectslugBuildversion",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Builds Accountname Projectslug Buildversion",
+                "description": "Parameters builds accountname projectslug buildversion.",
+                "operationId": "ParametersBuildsAccountnameProjectslugBuildversion",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/collaborators": {
+            "get": {
+                "summary": "Get Collaborators",
+                "description": "Get collaborators.",
+                "operationId": "GetCollaborators",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Post Collaborators",
+                "description": "Post collaborators.",
+                "operationId": "PostCollaborators",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            },
+            "put": {
+                "summary": "Put Collaborators",
+                "description": "Put collaborators.",
+                "operationId": "PutCollaborators",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/collaborators\/{userId}": {
+            "delete": {
+                "summary": "Delete Collaborators Userid",
+                "description": "Delete collaborators userid.",
+                "operationId": "DeleteCollaboratorsUser",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "get": {
+                "summary": "Get Collaborators Userid",
+                "description": "Get collaborators userid.",
+                "operationId": "GetCollaboratorsUser",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Collaborators Userid",
+                "description": "Parameters collaborators userid.",
+                "operationId": "ParametersCollaboratorsUser",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/deployments": {
+            "post": {
+                "summary": "Post Deployments",
+                "description": "Post deployments.",
+                "operationId": "PostDeployments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/deployments\/stop": {
+            "delete": {
+                "summary": "Delete Deployments Stop",
+                "description": "Delete deployments stop.",
+                "operationId": "DeleteDeploymentsStop",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/deployments\/{deploymentId}": {
+            "get": {
+                "summary": "Get Deployments Deploymentid",
+                "description": "Get deployments deploymentid.",
+                "operationId": "GetDeploymentsDeployment",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Deployments Deploymentid",
+                "description": "Parameters deployments deploymentid.",
+                "operationId": "ParametersDeploymentsDeployment",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/environments": {
+            "get": {
+                "summary": "Get Environments",
+                "description": "Get environments.",
+                "operationId": "GetEnvironments",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Post Environments",
+                "description": "Post environments.",
+                "operationId": "PostEnvironments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            },
+            "put": {
+                "summary": "Put Environments",
+                "description": "Put environments.",
+                "operationId": "PutEnvironments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/environments\/{deploymentEnvironmentId}": {
+            "delete": {
+                "summary": "Delete Environments Deploymentenvironmentid",
+                "description": "Delete environments deploymentenvironmentid.",
+                "operationId": "DeleteEnvironmentsDeploymentenvironment",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Environments Deploymentenvironmentid",
+                "description": "Parameters environments deploymentenvironmentid.",
+                "operationId": "ParametersEnvironmentsDeploymentenvironment",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/environments\/{deploymentEnvironmentId}\/deployments": {
+            "get": {
+                "summary": "Get Environments Deploymentenvironmentid Deployments",
+                "description": "Get environments deploymentenvironmentid deployments.",
+                "operationId": "GetEnvironmentsDeploymentenvironmentDeployments",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Environments Deploymentenvironmentid Deployments",
+                "description": "Parameters environments deploymentenvironmentid deployments.",
+                "operationId": "ParametersEnvironmentsDeploymentenvironmentDeployments",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/environments\/{deploymentEnvironmentId}\/settings": {
+            "get": {
+                "summary": "Get Environments Deploymentenvironmentid Settings",
+                "description": "Get environments deploymentenvironmentid settings.",
+                "operationId": "GetEnvironmentsDeploymentenvironmentSettings",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Environments Deploymentenvironmentid Settings",
+                "description": "Parameters environments deploymentenvironmentid settings.",
+                "operationId": "ParametersEnvironmentsDeploymentenvironmentSettings",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/projects": {
+            "get": {
+                "summary": "Get Projects",
+                "description": "Get projects.",
+                "operationId": "GetProjects",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Post Projects",
+                "description": "Post projects.",
+                "operationId": "PostProjects",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            },
+            "put": {
+                "summary": "Put Projects",
+                "description": "Put projects.",
+                "operationId": "PutProjects",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/projects\/status\/{badgeRepoProvider}\/{repoAccountName}\/{repoSlug}": {
+            "get": {
+                "summary": "Get Projects Status Badgerepoprover Repoaccountname Reposlug",
+                "description": "Get projects status badgerepoprover repoaccountname reposlug.",
+                "operationId": "GetProjectsStatusBadgerepoproverRepoaccountnameReposlug",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Status Badgerepoprover Repoaccountname Reposlug",
+                "description": "Parameters projects status badgerepoprover repoaccountname reposlug.",
+                "operationId": "ParametersProjectsStatusBadgerepoproverRepoaccountnameReposlug",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/projects\/status\/{statusBadgeId}": {
+            "get": {
+                "summary": "Get Projects Status Statusbadgeid",
+                "description": "Get projects status statusbadgeid.",
+                "operationId": "GetProjectsStatusStatusbadge",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Status Statusbadgeid",
+                "description": "Parameters projects status statusbadgeid.",
+                "operationId": "ParametersProjectsStatusStatusbadge",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/projects\/status\/{statusBadgeId}\/branch\/{buildBranch}": {
+            "get": {
+                "summary": "Get Projects Status Statusbadgeid Branch Buildbranch",
+                "description": "Get projects status statusbadgeid branch buildbranch.",
+                "operationId": "GetProjectsStatusStatusbadgeBranchBuildbranch",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Status Statusbadgeid Branch Buildbranch",
+                "description": "Parameters projects status statusbadgeid branch buildbranch.",
+                "operationId": "ParametersProjectsStatusStatusbadgeBranchBuildbranch",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/projects\/{accountName}\/{projectSlug}": {
+            "delete": {
+                "summary": "Delete Projects Accountname Projectslug",
+                "description": "Delete projects accountname projectslug.",
+                "operationId": "DeleteProjectsAccountnameProjectslug",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "get": {
+                "summary": "Get Projects Accountname Projectslug",
+                "description": "Get projects accountname projectslug.",
+                "operationId": "GetProjectsAccountnameProjectslug",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Accountname Projectslug",
+                "description": "Parameters projects accountname projectslug.",
+                "operationId": "ParametersProjectsAccountnameProjectslug",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/projects\/{accountName}\/{projectSlug}\/artifacts\/{artifactFileName}": {
+            "get": {
+                "summary": "Get Projects Accountname Projectslug Artifacts Artifactfilename",
+                "description": "Get projects accountname projectslug artifacts artifactfilename.",
+                "operationId": "GetProjectsAccountnameProjectslugArtifactsArtifactfilename",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Accountname Projectslug Artifacts Artifactfilename",
+                "description": "Parameters projects accountname projectslug artifacts artifactfilename.",
+                "operationId": "ParametersProjectsAccountnameProjectslugArtifactsArtifactfilename",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/projects\/{accountName}\/{projectSlug}\/branch\/{buildBranch}": {
+            "get": {
+                "summary": "Get Projects Accountname Projectslug Branch Buildbranch",
+                "description": "Get projects accountname projectslug branch buildbranch.",
+                "operationId": "GetProjectsAccountnameProjectslugBranchBuildbranch",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Accountname Projectslug Branch Buildbranch",
+                "description": "Parameters projects accountname projectslug branch buildbranch.",
+                "operationId": "ParametersProjectsAccountnameProjectslugBranchBuildbranch",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/projects\/{accountName}\/{projectSlug}\/build\/{buildVersion}": {
+            "get": {
+                "summary": "Get Projects Accountname Projectslug Build Buildversion",
+                "description": "Get projects accountname projectslug build buildversion.",
+                "operationId": "GetProjectsAccountnameProjectslugBuildBuildversion",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Accountname Projectslug Build Buildversion",
+                "description": "Parameters projects accountname projectslug build buildversion.",
+                "operationId": "ParametersProjectsAccountnameProjectslugBuildBuildversion",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/projects\/{accountName}\/{projectSlug}\/buildcache": {
+            "delete": {
+                "summary": "Delete Projects Accountname Projectslug Buildcache",
+                "description": "Delete projects accountname projectslug buildcache.",
+                "operationId": "DeleteProjectsAccountnameProjectslugBuildcache",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Accountname Projectslug Buildcache",
+                "description": "Parameters projects accountname projectslug buildcache.",
+                "operationId": "ParametersProjectsAccountnameProjectslugBuildcache",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/projects\/{accountName}\/{projectSlug}\/deployments": {
+            "get": {
+                "summary": "Get Projects Accountname Projectslug Deployments",
+                "description": "Get projects accountname projectslug deployments.",
+                "operationId": "GetProjectsAccountnameProjectslugDeployments",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Accountname Projectslug Deployments",
+                "description": "Parameters projects accountname projectslug deployments.",
+                "operationId": "ParametersProjectsAccountnameProjectslugDeployments",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/projects\/{accountName}\/{projectSlug}\/history": {
+            "get": {
+                "summary": "Get Projects Accountname Projectslug History",
+                "description": "Get projects accountname projectslug history.",
+                "operationId": "GetProjectsAccountnameProjectslugHistory",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Accountname Projectslug History",
+                "description": "Parameters projects accountname projectslug history.",
+                "operationId": "ParametersProjectsAccountnameProjectslugHistory",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/projects\/{accountName}\/{projectSlug}\/settings": {
+            "get": {
+                "summary": "Get Projects Accountname Projectslug Settings",
+                "description": "Get projects accountname projectslug settings.",
+                "operationId": "GetProjectsAccountnameProjectslugSettings",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Accountname Projectslug Settings",
+                "description": "Parameters projects accountname projectslug settings.",
+                "operationId": "ParametersProjectsAccountnameProjectslugSettings",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/projects\/{accountName}\/{projectSlug}\/settings\/build-number": {
+            "parameters": {
+                "summary": "Parameters Projects Accountname Projectslug Settings Build Number",
+                "description": "Parameters projects accountname projectslug settings build number.",
+                "operationId": "ParametersProjectsAccountnameProjectslugSettingsBuildNumber",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "put": {
+                "summary": "Put Projects Accountname Projectslug Settings Build Number",
+                "description": "Put projects accountname projectslug settings build number.",
+                "operationId": "PutProjectsAccountnameProjectslugSettingsBuildNumber",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/projects\/{accountName}\/{projectSlug}\/settings\/environment-variables": {
+            "get": {
+                "summary": "Get Projects Accountname Projectslug Settings Environment Variables",
+                "description": "Get projects accountname projectslug settings environment variables.",
+                "operationId": "GetProjectsAccountnameProjectslugSettingsEnvironmentVariables",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Accountname Projectslug Settings Environment Variables",
+                "description": "Parameters projects accountname projectslug settings environment variables.",
+                "operationId": "ParametersProjectsAccountnameProjectslugSettingsEnvironmentVariables",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "put": {
+                "summary": "Put Projects Accountname Projectslug Settings Environment Variables",
+                "description": "Put projects accountname projectslug settings environment variables.",
+                "operationId": "PutProjectsAccountnameProjectslugSettingsEnvironmentVariables",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/projects\/{accountName}\/{projectSlug}\/settings\/yaml": {
+            "get": {
+                "summary": "Get Projects Accountname Projectslug Settings Yaml",
+                "description": "Get projects accountname projectslug settings yaml.",
+                "operationId": "GetProjectsAccountnameProjectslugSettingsYaml",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Accountname Projectslug Settings Yaml",
+                "description": "Parameters projects accountname projectslug settings yaml.",
+                "operationId": "ParametersProjectsAccountnameProjectslugSettingsYaml",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "put": {
+                "summary": "Put Projects Accountname Projectslug Settings Yaml",
+                "description": "Put projects accountname projectslug settings yaml.",
+                "operationId": "PutProjectsAccountnameProjectslugSettingsYaml",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/roles": {
+            "get": {
+                "summary": "Get Roles",
+                "description": "Get roles.",
+                "operationId": "GetRoles",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Post Roles",
+                "description": "Post roles.",
+                "operationId": "PostRoles",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            },
+            "put": {
+                "summary": "Put Roles",
+                "description": "Put roles.",
+                "operationId": "PutRoles",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/roles\/{roleId}": {
+            "delete": {
+                "summary": "Delete Roles Roleid",
+                "description": "Delete roles roleid.",
+                "operationId": "DeleteRolesRole",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "get": {
+                "summary": "Get Roles Roleid",
+                "description": "Get roles roleid.",
+                "operationId": "GetRolesRole",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Roles Roleid",
+                "description": "Parameters roles roleid.",
+                "operationId": "ParametersRolesRole",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/users": {
+            "get": {
+                "summary": "Get Users",
+                "description": "Get users.",
+                "operationId": "GetUsers",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Post Users",
+                "description": "Post users.",
+                "operationId": "PostUsers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            },
+            "put": {
+                "summary": "Put Users",
+                "description": "Put users.",
+                "operationId": "PutUsers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/users\/{userId}": {
+            "delete": {
+                "summary": "Delete Users Userid",
+                "description": "Delete users userid.",
+                "operationId": "DeleteUsersUser",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "get": {
+                "summary": "Get Users Userid",
+                "description": "Get users userid.",
+                "operationId": "GetUsersUser",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Users Userid",
+                "description": "Parameters users userid.",
+                "operationId": "ParametersUsersUser",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/projects\/status\/{webhookId}": {
+            "get": {
+                "summary": "Get Projects Status Webhookid",
+                "description": "Get projects status webhookid.",
+                "operationId": "GetProjectsStatusWebhook",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Status Webhookid",
+                "description": "Parameters projects status webhookid.",
+                "operationId": "ParametersProjectsStatusWebhook",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/projects\/status\/{webhookId}\/branch\/{buildBranch}": {
+            "get": {
+                "summary": "Get Projects Status Webhookid Branch Buildbranch",
+                "description": "Get projects status webhookid branch buildbranch.",
+                "operationId": "GetProjectsStatusWebhookBranchBuildbranch",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "parameters": {
+                "summary": "Parameters Projects Status Webhookid Branch Buildbranch",
+                "description": "Parameters projects status webhookid branch buildbranch.",
+                "operationId": "ParametersProjectsStatusWebhookBranchBuildbranch",
+                "deprecated": 0,
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AceAccessRight": {
+                "type": "object",
+                "properties": {
+                    "allowed": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "AceAccessRightDefinition": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "Artifact": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "path": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ArtifactModel": {
+                "type": "object",
+                "properties": {
+                    "fileName": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "size": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "BuildLookupModel": {
+                "type": "object",
+                "properties": {
+                    "branch": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "buildId": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "BuildMessage": {
+                "type": "object",
+                "properties": {
+                    "created": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "BuildStartRequest": {
+                "type": "object",
+                "properties": {
+                    "accountName": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "branch": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "commitId": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "environmentVariables": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "projectSlug": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "pullRequestId": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "BuildWorkerImage": {
+                "type": "object",
+                "properties": {
+                    "buildWorkerImageId": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "CollaboratorAddition": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "roleId": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "CollaboratorUpdate": {
+                "type": "object",
+                "properties": {
+                    "roleId": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "userId": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "DeploymentCancellation": {
+                "type": "object",
+                "properties": {
+                    "deploymentId": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "DeploymentEnvironmentAddition": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "DeploymentEnvironmentDeploymentsResults": {
+                "type": "object",
+                "properties": {
+                    "deployments": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "DeploymentEnvironmentLookupModel": {
+                "type": "object",
+                "properties": {
+                    "deploymentEnvironmentId": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "DeploymentEnvironmentProject": {
+                "type": "object",
+                "properties": {
+                    "isSelected": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "projectId": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "DeploymentEnvironmentSettings": {
+                "type": "object",
+                "properties": {
+                    "environmentVariables": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "notifications": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "providerSettings": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "DeploymentEnvironmentSettingsResults": {
+                "type": "object"
+            },
+            "DeploymentLookupModel": {
+                "type": "object",
+                "properties": {
+                    "deploymentId": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "finished": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "started": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "DeploymentProvider": {
+                "type": "object",
+                "properties": {
+                    "onBranch": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "onEnvironmentVariables": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "providerSettings": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "DeploymentStartRequest": {
+                "type": "object",
+                "properties": {
+                    "accountName": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "buildJobId": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "buildVersion": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "environmentName": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "environmentVariables": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "projectSlug": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "EncryptRequest": {
+                "type": "object",
+                "properties": {
+                    "plainValue": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "Error": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "modelState": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "GroupPermissions": {
+                "type": "object",
+                "properties": {
+                    "permissions": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "HostEntry": {
+                "type": "object",
+                "properties": {
+                    "host": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "ip": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "NotificationProviderSettings": {
+                "type": "object"
+            },
+            "NotificationSettings": {
+                "type": "object",
+                "properties": {
+                    "account": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "addCustomRequestBody": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "bodyTemplate": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "channel": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "customRequestBody": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "customRequestBodyContentType": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "from": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "headers": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "headersValue": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "incomingWebhookUrl": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "onBuildFailure": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "onBuildStatusChanged": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "onBuildSuccess": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "recipients": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "recipientsValue": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "room": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "serverUrl": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "subjectTemplate": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "template": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "url": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "username": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "vsoAccount": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "PermissionState": {
+                "type": "object",
+                "properties": {
+                    "allowed": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ProjectAddition": {
+                "type": "object",
+                "properties": {
+                    "repositoryName": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "repositoryPassword": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "repositoryUsername": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ProjectBuildNumberUpdate": {
+                "type": "object",
+                "properties": {
+                    "nextBuildNumber": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ProjectBuildResults": {
+                "type": "object"
+            },
+            "ProjectConfiguration": {
+                "type": "object",
+                "properties": {
+                    "afterBuildScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "afterDeployScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "afterTestScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "artifacts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "assemblyFileVersionFormat": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "assemblyInfoFile": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "assemblyInformationalVersionFormat": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "assemblyVersionFormat": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "beforeBuildScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "beforeDeployScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "beforePackageScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "beforeTestScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "buildCloud": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "buildScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "cacheEntries": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "cloneDepth": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "cloneFolder": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "cloneScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "configuration": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "configureNuGetAccountSource": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "configureNuGetProjectSource": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "deployScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "deployments": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "disableNuGetPublishOnPullRequests": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "doNotIncrementBuildNumberOnPullRequests": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "dotnetCsprojAssemblyVersionFormat": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "dotnetCsprojFile": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "dotnetCsprojFileVersionFormat": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "dotnetCsprojInformationalVersionFormat": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "dotnetCsprojPackageVersionFormat": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "dotnetCsprojVersionFormat": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "environmentVariables": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "environmentVariablesMatrix": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "excludeBranches": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "forceHttpsClone": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "hostsEntries": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "hotFixScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "includeBranches": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "includeNuGetReferences": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "initScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "installScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "matrixAllowFailures": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "matrixExclude": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "matrixFastFinish": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "maxJobs": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "msBuildInParallel": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "msBuildProjectFileName": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "notifications": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "onBuildErrorScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "onBuildFinishScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "onBuildSuccessScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "onlyCommitsFiles": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "operatingSystem": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "packageAzureCloudServiceProjects": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "packageNuGetProjects": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "packageNuGetSymbols": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "packageWebApplicationProjects": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "packageWebApplicationProjectsXCopy": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "patchAssemblyInfo": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "patchDotnetCsproj": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "platform": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "services": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "shallowClone": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "skipBranchWithPullRequests": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "skipCommitsFiles": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "skipNonTags": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "skipTags": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "testAssemblies": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "testCategories": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "testCategoriesMatrix": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "testCategoriesMode": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "testScripts": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "xamarinRegisterAndroidProduct": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "xamarinRegisterIosProduct": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ProjectDeployment": {
+                "type": "object"
+            },
+            "ProjectDeploymentsResults": {
+                "type": "object",
+                "properties": {
+                    "deployments": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ProjectHistory": {
+                "type": "object",
+                "properties": {
+                    "builds": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ProjectLookupModel": {
+                "type": "object",
+                "properties": {
+                    "accountName": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "projectId": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "slug": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "ProjectSettingsResults": {
+                "type": "object",
+                "properties": {
+                    "buildClouds": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "defaultImageName": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "images": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "RoleAce": {
+                "type": "object",
+                "properties": {
+                    "accessRights": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "isAdmin": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "roleId": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "RoleAddition": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "Script": {
+                "type": "object",
+                "properties": {
+                    "script": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "SecurityDescriptor": {
+                "type": "object",
+                "properties": {
+                    "accessRightDefinitions": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "roleAces": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "StoredNameValue": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "StoredNameValueMatrix": {
+                "type": "object"
+            },
+            "StoredValue": {
+                "type": "object",
+                "properties": {
+                    "isEncrypted": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "StringValueObject": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "Timestamped": {
+                "type": "object",
+                "properties": {
+                    "created": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "updated": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "UserAccountRolesResults": {
+                "type": "object",
+                "properties": {
+                    "roles": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "UserAccountSettings": {
+                "type": "object",
+                "properties": {
+                    "notifyWhenBuildStatusChangedOnly": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "notifyWhenDeploymentStatusChangedOnly": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            },
+            "UserAddition": {
+                "type": "object",
+                "properties": {
+                    "confirmPassword": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "fullName": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "generatePassword": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "password": {
+                        "description": "",
+                        "type": "parameters"
+                    },
+                    "roleId": {
+                        "description": "",
+                        "type": "parameters"
+                    }
+                }
+            }
+        }
+    }
+}
