@@ -1,0 +1,1595 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "0.20180817",
+        "title": "AppVeyor",
+        "description": "AppVeyor is a hosted continuous integration service which runs on Microsoft\nWindows.  The AppVeyor REST API provides a RESTful way to interact with the\nAppVeyor service.  This includes managing projects, builds, deployments,\nand the teams that build them.\n\nAdditional help and discussion of the AppVeyor REST API is available at\nhttp:\/\/help.appveyor.com\/discussions\n\nThis Swagger definition is an **unofficial** description of the AppVeyor\nREST API maintained at https:\/\/github.com\/kevinoid\/appveyor-swagger\nPlease report any issues or suggestions for this Swagger definition at\nhttps:\/\/github.com\/kevinoid\/appveyor-swagger\/issues\/new\n\n#### API Conventions\n\nFields which are missing from update operations (`PUT` requests) are\ntypically reset to their default values.  So although most fields are not\ntechnically required, they should usually be specified in practice.\n",
+        "termsOfService": "https:\/\/www.appveyor.com\/terms-of-service\/"
+    },
+    "servers": [
+        "http:\/\/ci.appveyor.com\/api"
+    ],
+    "paths": {
+        "\/account\/encrypt": {
+            "post": {
+                "summary": "Encrypt a value for use in StoredValue.",
+                "description": "",
+                "operationId": "EncryptValue",
+                "deprecated": 0,
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AceAccessRight": {
+                "type": "object",
+                "properties": {
+                    "allowed": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "Reference",
+                        "type": "object"
+                    }
+                }
+            },
+            "name": {
+                "type": "object"
+            },
+            "AceAccessRightDefinition": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Reference",
+                        "type": "object"
+                    }
+                }
+            },
+            "Artifact": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "path": {
+                        "description": "Path glob of artifact files.\nNote that updateProject does not require path, but omitting path\nresults in post-build error \"Collecting artifacts... Value cannot\nbe null.  Parameter name: input\"\n",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "Reference",
+                        "type": "object"
+                    }
+                }
+            },
+            "type": {
+                "type": "object"
+            },
+            "ArtifactModel": {
+                "type": "object",
+                "properties": {
+                    "created": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "fileName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "size": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "type": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "url": {
+                        "description": "This property has not been observed in JSON responses, but is\npresent and nil in XML responses.\n",
+                        "type": "string"
+                    }
+                }
+            },
+            "Build": {
+                "type": "object"
+            },
+            "BuildJob": {
+                "type": "object"
+            },
+            "BuildLookupModel": {
+                "type": "object",
+                "properties": {
+                    "branch": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "buildId": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "BuildMessage": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "created": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "message": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "category": {
+                "type": "object"
+            },
+            "BuildStartRequest": {
+                "type": "object",
+                "properties": {
+                    "accountName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "branch": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "commitId": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "environmentVariables": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "projectSlug": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "pullRequestId": {
+                        "description": "Can not be used with `branch` or `commitId`",
+                        "type": "integer"
+                    }
+                }
+            },
+            "environmentVariables": {
+                "type": "array"
+            },
+            "BuildWorkerImage": {
+                "type": "object",
+                "properties": {
+                    "buildCloudName": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "buildWorkerImageId": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "osType": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "buildCloudName": {
+                "type": "object"
+            },
+            "osType": {
+                "type": "object"
+            },
+            "CollaboratorAddition": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "roleId": {
+                        "description": "",
+                        "type": "integer"
+                    }
+                }
+            },
+            "CollaboratorUpdate": {
+                "type": "object",
+                "properties": {
+                    "roleId": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "userId": {
+                        "description": "",
+                        "type": "integer"
+                    }
+                }
+            },
+            "Deployment": {
+                "type": "object"
+            },
+            "DeploymentCancellation": {
+                "type": "object",
+                "properties": {
+                    "deploymentId": {
+                        "description": "",
+                        "type": "integer"
+                    }
+                }
+            },
+            "DeploymentEnvironment": {
+                "type": "object"
+            },
+            "DeploymentEnvironmentAddition": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "provider": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "settings": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "DeploymentEnvironmentSettings": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "provider": {
+                "type": "object"
+            },
+            "settings": {
+                "type": "object"
+            },
+            "DeploymentEnvironmentDeploymentsResults": {
+                "type": "object",
+                "properties": {
+                    "deployments": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "DeploymentEnvironment": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "environment": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "deployments": {
+                "type": "array"
+            },
+            "DeploymentEnvironmentLookupModel": {
+                "type": "object",
+                "properties": {
+                    "deploymentEnvironmentId": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "provider": {
+                        "description": "Reference",
+                        "type": "object"
+                    }
+                }
+            },
+            "DeploymentEnvironmentProject": {
+                "type": "object",
+                "properties": {
+                    "isSelected": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "projectId": {
+                        "description": "",
+                        "type": "integer"
+                    }
+                }
+            },
+            "DeploymentEnvironmentSettings": {
+                "type": "object",
+                "properties": {
+                    "environmentVariables": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "notifications": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "providerSettings": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "notifications": {
+                "type": "array"
+            },
+            "providerSettings": {
+                "type": "array"
+            },
+            "DeploymentEnvironmentSettingsResults": {
+                "type": "object",
+                "properties": {
+                    "environment": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "DeploymentEnvironmentWithSettings": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "environment": {
+                "type": "object"
+            },
+            "DeploymentEnvironmentWithSettings": {
+                "type": "object"
+            },
+            "DeploymentJob": {
+                "type": "object"
+            },
+            "DeploymentLookupModel": {
+                "type": "object",
+                "properties": {
+                    "BuildLookupModel": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "build": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "deploymentId": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "finished": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "started": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "status": {
+                "type": "object"
+            },
+            "DeploymentProvider": {
+                "type": "object",
+                "properties": {
+                    "onBranch": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "onEnvironmentVariables": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "provider": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "providerSettings": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "onBranch": {
+                "type": "array"
+            },
+            "onEnvironmentVariables": {
+                "type": "array"
+            },
+            "DeploymentStartRequest": {
+                "type": "object",
+                "properties": {
+                    "accountName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "buildJobId": {
+                        "description": "Optional job id with artifacts if build contains multiple jobs.",
+                        "type": "string"
+                    },
+                    "buildVersion": {
+                        "description": "Build to deploy",
+                        "type": "string"
+                    },
+                    "environmentName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "environmentVariables": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "projectSlug": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "EncryptRequest": {
+                "type": "object",
+                "properties": {
+                    "plainValue": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "EnvironmentDeploymentModel": {
+                "type": "object"
+            },
+            "Error": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "modelState": {
+                        "description": "When present, this property is a map of property names in the format\n`request.<capitalized name>` to an `Array` of validation error\nmessage strings for the property.\n",
+                        "type": "object"
+                    }
+                }
+            },
+            "modelState": {
+                "type": "object"
+            },
+            "GroupPermissions": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "permissions": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "permissions": {
+                "type": "array"
+            },
+            "HostEntry": {
+                "type": "object",
+                "properties": {
+                    "host": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "ip": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "Job": {
+                "type": "object"
+            },
+            "NotificationProviderSettings": {
+                "type": "object",
+                "properties": {
+                    "provider": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "settings": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "NotificationSettings": {
+                        "description": "This type is the union of the settings types for each of the various\nnotification types supported by the API.  The properties correspond to\nthe following notification types:\n\n#### All Types\n- onBuildSuccess\n- onBuildFailure\n- onBuildStatusChanged\n\n#### Campfire\n- account\n- authToken\n- room\n- template\n\n#### Email\n- subjectTemplate\n- bodyTemplate\n- recipients\n- recipientsValue\n\n#### GitHubPullRequest\n- authToken\n- template\n\n#### HipChat\n- authToken\n- from\n- room\n- template\n- serverUrl\n\n#### Slack\n- incomingWebhookUrl\n- authToken\n- channel\n- template\n\n#### Webhook\n- method\n- url\n- headers\n- headersValue\n- addCustomRequestBody\n- customRequestBodyContentType\n- customRequestBody\n\n#### VSOTeamRoom\n- vsoAccount\n- username\n- password\n- room\n- template\n",
+                        "type": "object"
+                    }
+                }
+            },
+            "NotificationSettings": {
+                "type": "object",
+                "properties": {
+                    "$type": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "account": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "addCustomRequestBody": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "authToken": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "bodyTemplate": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "channel": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "customRequestBody": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "customRequestBodyContentType": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "from": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "headers": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "headersValue": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "incomingWebhookUrl": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "method": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "onBuildFailure": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "onBuildStatusChanged": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "onBuildSuccess": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "password": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "recipients": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "recipientsValue": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "room": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "serverUrl": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "subjectTemplate": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "template": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "This property has not been observed in JSON responses, but is\npresent and nil in XML responses.\n",
+                        "type": "string"
+                    },
+                    "username": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "vsoAccount": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "StoredValue": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "$type": {
+                "type": "object"
+            },
+            "authToken": {
+                "type": "object"
+            },
+            "headers": {
+                "type": "array"
+            },
+            "method": {
+                "type": "object"
+            },
+            "password": {
+                "type": "object"
+            },
+            "recipients": {
+                "type": "array"
+            },
+            "NuGetFeed": {
+                "type": "object"
+            },
+            "PermissionState": {
+                "type": "object",
+                "properties": {
+                    "allowed": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Reference",
+                        "type": "object"
+                    }
+                }
+            },
+            "Project": {
+                "type": "object"
+            },
+            "ProjectAddition": {
+                "type": "object",
+                "properties": {
+                    "repositoryAuthentication": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "repositoryName": {
+                        "description": "URL when repositoryProvider is git, mercurial, subversion username\/project when repositoryProvider is gitHub",
+                        "type": "string"
+                    },
+                    "repositoryPassword": {
+                        "description": "Required if repositoryAuthentication is credentials",
+                        "type": "string"
+                    },
+                    "repositoryProvider": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "repositoryUsername": {
+                        "description": "Required if repositoryAuthentication is credentials",
+                        "type": "string"
+                    }
+                }
+            },
+            "repositoryAuthentication": {
+                "type": "object"
+            },
+            "repositoryProvider": {
+                "type": "object"
+            },
+            "ProjectBuildNumberUpdate": {
+                "type": "object",
+                "properties": {
+                    "nextBuildNumber": {
+                        "description": "",
+                        "type": "integer"
+                    }
+                }
+            },
+            "ProjectBuildResults": {
+                "type": "object",
+                "properties": {
+                    "Build": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "build": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "Project": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "project": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "ProjectConfiguration": {
+                "type": "object",
+                "properties": {
+                    "afterBuildScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "afterDeployScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "afterTestScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "artifacts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "assemblyFileVersionFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "assemblyInfoFile": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "assemblyInformationalVersionFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "assemblyVersionFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "beforeBuildScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "beforeDeployScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "beforePackageScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "beforeTestScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "branchesMode": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "buildCloud": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "buildMode": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "buildScripts": {
+                        "description": "Only set\/used when `buildMode` is `script`.",
+                        "type": "array"
+                    },
+                    "cacheEntries": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "cloneDepth": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "cloneFolder": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "cloneScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "configuration": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "configureNuGetAccountSource": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "configureNuGetProjectSource": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "deployMode": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "deployScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "deployments": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "disableNuGetPublishOnPullRequests": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "doNotIncrementBuildNumberOnPullRequests": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "dotnetCsprojAssemblyVersionFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "dotnetCsprojFile": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "dotnetCsprojFileVersionFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "dotnetCsprojInformationalVersionFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "dotnetCsprojPackageVersionFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "dotnetCsprojVersionFormat": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "environmentVariables": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "environmentVariablesMatrix": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "excludeBranches": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "forceHttpsClone": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "hostsEntries": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "hotFixScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "includeBranches": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "includeNuGetReferences": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "initScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "installScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "matrixAllowFailures": {
+                        "description": "Although the names and values are not enforced, the combinations which are meaningful are documented at https:\/\/www.appveyor.com\/docs\/build-configuration\/#allow-failing-jobs",
+                        "type": "array"
+                    },
+                    "matrixExcept": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "matrixExclude": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "matrixFastFinish": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "matrixOnly": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "maxJobs": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "msBuildInParallel": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "msBuildProjectFileName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "msBuildVerbosity": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "notifications": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "onBuildErrorScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "onBuildFinishScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "onBuildSuccessScripts": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "onlyCommitsFiles": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "operatingSystem": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "packageAspNetCoreProjects": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "packageAzureCloudServiceProjects": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "packageDotnetConsoleProjects": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "packageNuGetProjects": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "packageNuGetSymbols": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "packageWebApplicationProjects": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "packageWebApplicationProjectsBeanstalk": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "packageWebApplicationProjectsOctopus": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "packageWebApplicationProjectsXCopy": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "patchAssemblyInfo": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "patchDotnetCsproj": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "platform": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "services": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "shallowClone": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "skipBranchWithPullRequests": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "skipCommitsFiles": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "skipNonTags": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "skipTags": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "stacks": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "testAssemblies": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "testCategories": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "testCategoriesMatrix": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "testCategoriesMode": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "testMode": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "testScripts": {
+                        "description": "Only set\/used when `testMode` is `script`.",
+                        "type": "array"
+                    },
+                    "xamarinRegisterAndroidProduct": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "xamarinRegisterIosProduct": {
+                        "description": "",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "afterBuildScripts": {
+                "type": "array"
+            },
+            "afterDeployScripts": {
+                "type": "array"
+            },
+            "afterTestScripts": {
+                "type": "array"
+            },
+            "artifacts": {
+                "type": "array"
+            },
+            "beforeBuildScripts": {
+                "type": "array"
+            },
+            "beforeDeployScripts": {
+                "type": "array"
+            },
+            "beforePackageScripts": {
+                "type": "array"
+            },
+            "beforeTestScripts": {
+                "type": "array"
+            },
+            "branchesMode": {
+                "type": "object"
+            },
+            "buildCloud": {
+                "type": "array"
+            },
+            "buildMode": {
+                "type": "object"
+            },
+            "buildScripts": {
+                "type": "array"
+            },
+            "cacheEntries": {
+                "type": "array"
+            },
+            "cloneScripts": {
+                "type": "array"
+            },
+            "configuration": {
+                "type": "array"
+            },
+            "deployMode": {
+                "type": "object"
+            },
+            "deployScripts": {
+                "type": "array"
+            },
+            "environmentVariablesMatrix": {
+                "type": "array"
+            },
+            "excludeBranches": {
+                "type": "array"
+            },
+            "hostsEntries": {
+                "type": "array"
+            },
+            "hotFixScripts": {
+                "type": "array"
+            },
+            "includeBranches": {
+                "type": "array"
+            },
+            "initScripts": {
+                "type": "array"
+            },
+            "installScripts": {
+                "type": "array"
+            },
+            "matrixAllowFailures": {
+                "type": "array"
+            },
+            "matrixExcept": {
+                "type": "array"
+            },
+            "matrixExclude": {
+                "type": "array"
+            },
+            "matrixOnly": {
+                "type": "array"
+            },
+            "msBuildVerbosity": {
+                "type": "object"
+            },
+            "onBuildErrorScripts": {
+                "type": "array"
+            },
+            "onBuildFinishScripts": {
+                "type": "array"
+            },
+            "onBuildSuccessScripts": {
+                "type": "array"
+            },
+            "onlyCommitsFiles": {
+                "type": "array"
+            },
+            "operatingSystem": {
+                "type": "array"
+            },
+            "platform": {
+                "type": "array"
+            },
+            "services": {
+                "type": "array"
+            },
+            "skipCommitsFiles": {
+                "type": "array"
+            },
+            "stacks": {
+                "type": "array"
+            },
+            "testAssemblies": {
+                "type": "array"
+            },
+            "testCategories": {
+                "type": "array"
+            },
+            "testCategoriesMatrix": {
+                "type": "array"
+            },
+            "testMode": {
+                "type": "object"
+            },
+            "testScripts": {
+                "type": "array"
+            },
+            "ProjectDeployment": {
+                "type": "object",
+                "properties": {
+                    "Deployment": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "deployment": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "Project": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "project": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "ProjectDeploymentModel": {
+                "type": "object"
+            },
+            "ProjectDeploymentsResults": {
+                "type": "object",
+                "properties": {
+                    "deployments": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "Project": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "project": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "ProjectHistory": {
+                "type": "object",
+                "properties": {
+                    "builds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "Project": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "project": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "builds": {
+                "type": "array"
+            },
+            "ProjectLookupModel": {
+                "type": "object",
+                "properties": {
+                    "accountName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "projectId": {
+                        "description": "",
+                        "type": "integer"
+                    },
+                    "slug": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "ProjectSettingsResults": {
+                "type": "object",
+                "properties": {
+                    "buildClouds": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "defaultImageName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "images": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "Project": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "project": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "settings": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "ProjectWithConfiguration": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "buildClouds": {
+                "type": "array"
+            },
+            "images": {
+                "type": "array"
+            },
+            "ProjectWithConfiguration": {
+                "type": "object"
+            },
+            "Role": {
+                "type": "object"
+            },
+            "RoleAce": {
+                "type": "object",
+                "properties": {
+                    "accessRights": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "isAdmin": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "roleId": {
+                        "description": "",
+                        "type": "integer"
+                    }
+                }
+            },
+            "accessRights": {
+                "type": "array"
+            },
+            "RoleAddition": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "RoleWithGroups": {
+                "type": "object"
+            },
+            "Script": {
+                "type": "object",
+                "properties": {
+                    "language": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "script": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "language": {
+                "type": "object"
+            },
+            "SecurityDescriptor": {
+                "type": "object",
+                "properties": {
+                    "accessRightDefinitions": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "roleAces": {
+                        "description": "",
+                        "type": "array"
+                    }
+                }
+            },
+            "accessRightDefinitions": {
+                "type": "array"
+            },
+            "roleAces": {
+                "type": "array"
+            },
+            "StoredNameValue": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": ""
+                    },
+                    "StoredValue": {
+                        "description": "",
+                        "type": "object"
+                    }
+                }
+            },
+            "value": {
+                "type": "object"
+            },
+            "StoredNameValueMatrix": {
+                "type": "object",
+                "properties": {
+                    "StoredNameValue": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "variables": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "StoredValue": {
+                "type": "object",
+                "properties": {
+                    "isEncrypted": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "value": {
+                        "description": "Encrypted values can be created using the encryptValue operation.\n\nEmpty environment variables are represented by missing (null) value\nrather than an empty string.",
+                        "type": "string"
+                    }
+                }
+            },
+            "StringValueObject": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "description": "Encrypted values can be created using the encryptValue operation.\n\nEmpty environment variables are represented by missing (null) value\nrather than an empty string.",
+                        "type": "string"
+                    }
+                }
+            },
+            "Timestamped": {
+                "type": "object",
+                "properties": {
+                    "created": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "updated": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "UserAccount": {
+                "type": "object"
+            },
+            "UserAccountRolesResults": {
+                "type": "object",
+                "properties": {
+                    "roles": {
+                        "description": "",
+                        "type": "array"
+                    },
+                    "UserAccount": {
+                        "description": "",
+                        "type": "object"
+                    },
+                    "user": {
+                        "description": "",
+                        "type": ""
+                    }
+                }
+            },
+            "roles": {
+                "type": "array"
+            },
+            "UserAccountSettings": {
+                "type": "object",
+                "properties": {
+                    "failedBuildNotification": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "failedDeploymentNotification": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "notifyWhenBuildStatusChangedOnly": {
+                        "description": "Note that this value is `true` on user creation, but behaves as\n`false` when not specified on update.\n",
+                        "type": "boolean"
+                    },
+                    "notifyWhenDeploymentStatusChangedOnly": {
+                        "description": "Note that this value is `true` on user creation, but behaves as\n`false` when not specified on update.\n",
+                        "type": "boolean"
+                    },
+                    "successfulBuildNotification": {
+                        "description": "Reference",
+                        "type": "object"
+                    },
+                    "successfulDeploymentNotification": {
+                        "description": "Reference",
+                        "type": "object"
+                    }
+                }
+            },
+            "failedBuildNotification": {
+                "type": "object"
+            },
+            "failedDeploymentNotification": {
+                "type": "object"
+            },
+            "successfulBuildNotification": {
+                "type": "object"
+            },
+            "successfulDeploymentNotification": {
+                "type": "object"
+            },
+            "UserAddition": {
+                "type": "object",
+                "properties": {
+                    "confirmPassword": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "fullName": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "generatePassword": {
+                        "description": "",
+                        "type": "boolean"
+                    },
+                    "password": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "roleId": {
+                        "description": "",
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    }
+}
